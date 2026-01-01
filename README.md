@@ -4,6 +4,7 @@ An unofficial Python SDK for the [Sharesight](https://www.sharesight.com/) API (
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyPI version](https://img.shields.io/pypi/v/sharesight-python.svg)](https://pypi.org/project/sharesight-python/)
 
 ## Features
 
@@ -48,28 +49,21 @@ If you're building an application for others to use, you'll need to go through S
 
 ## Installation
 
+```bash
+pip install sharesight-python
+```
+
 ### Requirements
 
 - Python 3.8+
-- `httpx` library
 
-### Install Dependencies
+### Alternative Installation Methods
 
+**From source (editable mode):**
 ```bash
-pip install httpx
-```
-
-### Install the SDK
-
-**Option 1: Copy directly**
-```bash
-# Copy the sharesight/ directory into your project
-cp -r sharesight/ /path/to/your/project/
-```
-
-**Option 2: Install as editable package**
-```bash
-pip install -e /path/to/sharesight
+git clone https://github.com/dejersey/sharesight-python.git
+cd sharesight-python
+pip install -e .
 ```
 
 ---
