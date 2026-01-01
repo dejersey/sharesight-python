@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sharesight-python"
-version = "0.1.1"
+version = "0.1.2"
 description = "An unofficial Python SDK for the Sharesight API (v2 and v3)"
 readme = "README.md"
 license = "MIT"

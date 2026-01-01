@@ -61,15 +61,16 @@ class TradesModule(BaseModule):
             attachment_path: Optional local path to a file to attach (PDF, Image).
         """
         payload = {"payout": payout_data.copy()}
+        payload["payout"]["holding_id"] = holding_id
         
         if attachment_path:
             if not os.path.exists(attachment_path):
                 raise FileNotFoundError(f"Attachment file not found: {attachment_path}")
             
-            payload["payout"]["attachment"] = self._encode_file(attachment_path)
-            payload["payout"]["attachment_name"] = os.path.basename(attachment_path)
+            payload["payout"]["file_attachment"] = self._encode_file(attachment_path)
+            payload["payout"]["file_name"] = os.path.basename(attachment_path)
             
-        return self.client.post(f"holdings/{holding_id}/payouts", version="v3", data=payload)
+        return self.client.post("payouts.json", version="v2", data=payload)
 
     def _encode_file(self, file_path: str) -> str:
         """Encode a file as a Base64 string."""
